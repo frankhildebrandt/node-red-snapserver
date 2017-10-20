@@ -1,0 +1,42 @@
+
+<script type="text/javascript">
+    RED.nodes.registerType('snap-client-volume',{
+        category: 'snapserver',
+        color: '#a6bbcf',
+        defaults: {
+            server: {value:"", type:"snapcast-server"},
+            id: {value: null},
+            volume: {value: null},
+            muted: {value: null}
+        },
+        inputs:1,
+        outputs:0,
+        icon: "bridge.png",
+        label: function() {
+            return "SnapClient Volume";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="snap-client-volume">
+    <div class="form-row">
+        <label for="node-input-server"><i class="icon-tag"></i> Server</label>
+        <input type="text" id="node-input-server" placeholder="Host">
+    </div>
+    <div class="form-row">
+        <label for="node-input-id"><i class="icon-tag"></i> Id</label>
+        <input type="text" id="node-input-id" placeholder="Id">
+    </div>
+    <div class="form-row">
+        <label for="node-input-volume"><i class="icon-tag"></i> Volume</label>
+        <input type="text" id="node-input-volume" placeholder="Volume">
+    </div>
+    <div class="form-row">
+        <label for="node-input-muted"><i class="icon-tag"></i> Muted</label>
+        <input type="text" id="node-input-muted" placeholder="Muted">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="snap-client-volume">
+    <p></p>
+</script>

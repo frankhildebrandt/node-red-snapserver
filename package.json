@@ -1,0 +1,14 @@
+{
+  "name": "node-red-snapserver",
+  "version": "0.0.1",
+  "dependencies": {
+    "ndjson": "^1.5.0"
+  },
+  "node-red": {
+    "nodes": {
+      "snap-events": "snap-events.js",
+      "snapcast-server": "snapcast-server.js",
+      "snap-client-volume": "snap-client-volume.js"
+    }
+  }
+}
