@@ -9,9 +9,9 @@ module.exports = function (RED) {
         var server = RED.nodes.getNode(config.server);
         var volume = 100;
         var muted = false;
+        var client = new net.Socket();
 
         node.on('input', function (msg) {
-            var client = new net.Socket();
             client.connect(server.port || 1705, server.host, function () {
 
                 if (msg.payload === "MUTE") {
@@ -38,9 +38,10 @@ module.exports = function (RED) {
                 }
                 node.status({fill: "green", shape: "ring", text: "Muted: " + muted + " Volume: " + volume});
                 client.write('                ' + JSON.stringify(data) + ' \n');
-                client.close();
+                setTimeout(function() {
+                    client.close();
+                },200);
             });
-
         })
 
     }
