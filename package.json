@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-snapserver",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A node-red node for communicate with a snapcast server",
   "author": "Frank Hildebrandt <frank@hildebrandt.io>",
   "dependencies": {
