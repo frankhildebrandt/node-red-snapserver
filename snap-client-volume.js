@@ -38,9 +38,6 @@ module.exports = function (RED) {
                 }
                 node.status({fill: "green", shape: "ring", text: "Muted: " + muted + " Volume: " + volume});
                 client.write('                ' + JSON.stringify(data) + ' \n');
-                setTimeout(function() {
-                    client.close();
-                },200);
             });
         })
 
