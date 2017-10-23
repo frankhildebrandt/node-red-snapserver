@@ -28,8 +28,8 @@ module.exports = function (RED) {
                     "id": 1, "jsonrpc": "2.0", "method": "Client.SetVolume", "params": {
                         "id": config.id || msg.payload.id,
                         "volume": {
-                            'muted': parseInt(config.muted) || msg.payload.muted,
-                            'percent': parseInt(config.volume) || msg.payload.volume
+                            'muted': msg.payload.muted,
+                            'percent': msg.payload.volume
                         }
                     }
                 };
