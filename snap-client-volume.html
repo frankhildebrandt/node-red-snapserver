@@ -7,13 +7,14 @@
             server: {value:"", type:"snapcast-server"},
             id: {value: null},
             volume: {value: null},
-            muted: {value: null}
+            muted: {value: null},
+            name: {value: null}
         },
         inputs:1,
         outputs:0,
         icon: "bridge.png",
         label: function() {
-            return "SnapClient Volume";
+            return this.name;
         }
     });
 </script>
@@ -34,6 +35,10 @@
     <div class="form-row">
         <label for="node-input-muted"><i class="icon-tag"></i> Muted</label>
         <input type="text" id="node-input-muted" placeholder="Muted">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
