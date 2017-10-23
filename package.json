@@ -1,6 +1,6 @@
 {
   "name": "node-red-snapserver",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Frank Hildebrandt <frank@hildebrandt.io>",
   "dependencies": {
     "ndjson": "^1.5.0"
