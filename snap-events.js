@@ -5,19 +5,18 @@ module.exports = function (RED) {
     function SnapServer(config) {
         RED.nodes.createNode(this, config);
         var node = this;
-        var client = new net.Socket();
-
-        var server = RED.nodes.getNode(config.server);
 
         node.status({fill: "red", shape: "ring", text: "initializing"});
 
-        client.connect(server.port || 1705, server.host, function () {
-            node.status({fill: "blue", shape: "ring", text: "getting status"});
-            setTimeout(function () {
-                client.write(' {"id":666,"jsonrpc":"2.0","method":"Server.GetStatus"} \n');
-            }, 1000);
-        });
-        client.on('data', function (msg) {
+        var server = RED.nodes.getNode(config.server);
+
+        node.status({fill: "blue", shape: "ring", text: "getting status"});
+
+        setTimeout(function () {
+            server.send({"id":666,"jsonrpc":"2.0","method":"Server.GetStatus"});
+        }, 1000);
+
+        server.on('data', function (msg) {
             node.status({fill: "green", shape: "ring", text: "connected"});
 
             try {
